@@ -1,4 +1,7 @@
 MAX_LINES = 3
+MAX_BET= 100
+MIN_BET = 1
+
 
 
 
@@ -34,3 +37,21 @@ def get_lines_of_bet():
             print("Please enter vallid number!")
 
     return lines
+
+
+
+
+def bet_lines():
+    while True:
+        bet = input("How many dollor do you want to betting on the lines? $")
+        if bet.isdigit():
+            bet = int(bet)
+            if MIN_BET <= bet <= MAX_BET:
+                break
+            else:
+                print(f"the dollor must be between the ${MIN_BET} - ${MAX_LINES}")
+
+        else:
+            print("Please enter vallid number!")
+
+    return bet
