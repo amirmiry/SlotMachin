@@ -55,3 +55,20 @@ def bet_lines():
             print("Please enter vallid number!")
 
     return bet
+
+
+
+def main ():
+    balance  = deposite()
+    lines  = get_lines_of_bet()
+    while True:
+        bet = bet_lines()
+        total_bet = bet * lines
+        if total_bet > balance:
+            print("the total bet must be less than or equal to your balance!", "your balnce is $", balance)
+        else:
+            break
+
+    print(f"your betting {bet} on the {lines} lines, your total bet is ${total_bet}")
+
+main()
