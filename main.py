@@ -95,10 +95,7 @@ def bet_lines():
 
     return bet
 
-
-
-def main ():
-    balance  = deposite()
+def spin(balance):
     lines  = get_lines_of_bet()
     while True:
         bet = bet_lines()
@@ -109,5 +106,12 @@ def main ():
             break
 
     print(f"your betting {bet} on the {lines} lines, your total bet is ${total_bet}")
+    slot = get_slot_machin_spin(ROWS , COLS , symbol_count)
+    print_slot_machin(slot)
+
+
+def main ():
+    balance  = deposite()
+
 
 main()  
