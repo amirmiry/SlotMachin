@@ -34,6 +34,16 @@ def get_slot_machin_spin(rows , cols , symbols):
     return columns
 
 
+
+def print_slot_machin(columns):
+    for row in range(len(columns[0])):
+        for i, column in enumerate(columns):
+            if i != len(columns)-1:
+                print(column[row], end= "|")
+            else:
+                print(column[row], "\t")
+
+
 def deposite():
     while True:
         amount  = input("What amonut Would You like to set as your balnace? $")
