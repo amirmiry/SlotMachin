@@ -10,6 +10,24 @@ symbol_count  = {"A": 2,
                  "C": 6,
                  "D": 8,}
 
+symbol_value = { "A": 5,
+                 "B": 4,
+                 "C": 3,
+                 "D": 2,}
+
+def check_winnings(columns , lines , bet , symbol_val):
+    winnings = 0
+    line_win = []
+    for line in range(lines):
+        symbol = columns[0][line]
+        for column in columns:
+            symbol_to_check = column[line]
+            if symbol != symbol_to_check:
+                break
+        else:
+            winnings += symbol_val[symbol] * bet
+            line_win.append(line)
+    return winnings, line_win
 
 
 
