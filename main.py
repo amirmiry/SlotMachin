@@ -138,6 +138,15 @@ def spin(balance):
 
 def main ():
     balance  = deposite()
+    while True:
+        print(f"Your current balance is ${balance}")
+        answer = input("press any key to play? (q to quit) ").lower()
+        if answer == "q":
+            quit()
+        balance += spin(balance)
+
+    print(f"You left with ${balance}")
 
 
-main()  
+if __name__ == "__main__":
+    main()
