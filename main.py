@@ -10,6 +10,30 @@ symbol_count  = {"A": 2,
                  "C": 6,
                  "D": 8,}
 
+
+
+
+def get_slot_machin_spin(rows , cols , symbols):
+    all_symbols = [] #have all the symbols with their number of chance !
+    for symbol , symbol_counts in symbols.items():
+        for _ in range(symbol_counts):
+            all_symbols.append(symbol)
+
+
+    columns = []
+    for _ in range (COLS):
+        column = []
+        current_symbol = all_symbols[:]
+        for _ in range(ROWS):
+            value  = random.choice(current_symbol)
+            current_symbol.remove(value) #remove to save the chance of them !
+            column.append(value)
+            # We are moving to select the option of each column
+        columns.append(column)
+
+    return columns
+
+
 def deposite():
     while True:
         amount  = input("What amonut Would You like to set as your balnace? $")
